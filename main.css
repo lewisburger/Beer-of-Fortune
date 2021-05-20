@@ -13,6 +13,8 @@ Verison History:
 body
 {
     font-family: Helvetica, sans-serif;
+    background-image: url("phil-goodwin-Ys85uMksDHc-unsplash.jpg");
+    background-size: cover;
 }
 
 /* Sets the background image for the wheel */
@@ -124,4 +126,24 @@ td.pw3
     justify-content: center;
     width: 75%;
     
+}
+
+#results {
+    display: flex;
+    background-color: #6fe8f0;
+    width: 250px;
+    justify-content: center;
+    align-content: center;
+    margin: auto 0;
+    flex-direction: column;
+}
+
+#results #prizeBox {
+    height: 40px;
+    border: black 8px solid;
+    border-radius: 10px;
+    background-color: goldenrod;
+    text-align: center;
+    line-height: 40px;
+    font-weight: bold;
 }
