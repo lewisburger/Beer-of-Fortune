@@ -53,37 +53,37 @@
                 <br><br/> -->
                 <td width="438" height="582" class="the_wheel" align="center" valign="center">
                     <canvas id="canvas" width="434" height="434">
-                        <p style="{color: white}" align="center">Sorry, your browser doesn't support canvas. Please try another.</p>
+                        <p style="color: white" align="center">Sorry, your browser doesn't support canvas. Please try another.</p>
                     </canvas>
                 </td>
             </tr>
             <div class="power_controls">
                 <table class="power" cellpadding="10" cellspacing="0">
-                    <!-- <tr>
+                    <tr>
                         <th align="center">Power</th>
-                    </tr> -->
+                    </tr>
                     <tr>
                         <td width="78" height="45" align="center" id="pw1" onClick="spinType(1);">Practice Spin</td>
                         <td width="78" height="45" align="center" id="pw2" onClick="spinType(2);">Real Spin</td>
-                        <!-- <td width="78" align="center" id="pw3" onClick="powerSelected(3);">High</td> -->
+                        <td width="78" align="center" id="pw3" onClick="powerSelected(3);">High</td>
                     </tr>
-                    <!-- <tr>
+                    <tr>
                     </tr>
                     <tr>
                         
-                    </tr> -->
+                    </tr>
                 </table>
-                <div id="buttons">
-                    <div id="testButton" onClick="spinType(1);">
-                        <h5 onClick="spinType(1);">PRACTICE SPIN</h5>
+                <section id="controls">
+                    <div id="buttons">
+                        <div id="testButton" onClick="spinType(1);">
+                            <h5 onClick="spinType(1);">PRACTICE SPIN</h5>
+                        </div>
+                        <div id="realButton" onClick="spinType(2);">
+                            <h5 onClick="spinType(2);">REAL SPIN</h5>
+                        </div>
                     </div>
-                    <div id="realButton" onClick="spinType(2);">
-                        <h5 onClick="spinType(2);">REAL SPIN</h5>
-                    </div>
-                </div>
-                <br />
-                <img id="spin_button" src="spin_off.png" alt="Spin" onClick="startSpin();" />
-                <br /><br />
+                    <img id="spin_button" src="spin_off.png" alt="Spin" onClick="startSpin();"/>
+                </section>
                 &nbsp;&nbsp;<a href="#" onClick="resetWheel(); return false;">Play Again</a><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(reset)
             </div>
         </table>
@@ -157,7 +157,11 @@
 
                     if (intention === 1) {
                         console.log("Test Spin" + intention)
-                        document.getElementById('pw1').className = "pw1";
+                        document.getElementById('testButton').style.backgroundColor = "goldenrod";
+                        document.getElementById('testButton').style.color = "black";
+                        document.getElementById('realButton').style.backgroundColor = "black";
+                        document.getElementById('realButton').style.color = "grey";
+                        
                         wheelPower = 1
                         // var intention = 0
                         // return;
@@ -165,7 +169,10 @@
 
                     if (intention === 2) {
                         console.log ("Real Spin"  + intention)
-                        document.getElementById('pw2').className = "pw2";
+                        document.getElementById('realButton').style.backgroundColor = "goldenrod";
+                        document.getElementById('realButton').style.color = "black";
+                        document.getElementById('testButton').style.backgroundColor = "black";
+                        document.getElementById('testButton').style.color = "grey";
                         wheelPower = 2
                         // var intention = 0
                         // return;
@@ -249,6 +256,8 @@
                 document.getElementById('pw1').className = "";  // Remove all colours from the power level indicators.
                 document.getElementById('pw2').className = "";
                 document.getElementById('pw3').className = "";
+                document.getElementById('realButton').style.backgroundColor = "goldenrod";
+                document.getElementById('testButton').style.backgroundColor = "goldenrod";
 
                 wheelSpinning = false;          // Reset to false to power buttons and spin can be clicked again.
             }
